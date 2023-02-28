@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SharedService } from '@demo/shared';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: '<router-outlet />',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  private sharedService = inject(SharedService);
+
+  ngOnInit(): void {
+    this.sharedService.setData({ value: 'Hello Micro Frontend' });
+  }
+}
