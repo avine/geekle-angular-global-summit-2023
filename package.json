@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "standalone": "ng generate @angular/core:standalone"
   },
   "private": true,
   "dependencies": {
