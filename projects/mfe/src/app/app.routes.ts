@@ -8,6 +8,10 @@ const APP_ROUTES: Routes = [
     pathMatch: 'full',
     component: HomeComponent,
   },
+  {
+    path: 'dummy',
+    loadComponent: () => import('./dummy.component'),
+  },
 ];
 
 export default APP_ROUTES;

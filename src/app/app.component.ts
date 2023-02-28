@@ -6,7 +6,11 @@ import { LibService } from 'lib';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: '<router-outlet />',
+  template: `
+    <h1>Geekle Angular Global Summit 2023</h1>
+
+    <router-outlet />
+  `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
