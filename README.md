@@ -1,27 +1,26 @@
-# Demo
+# Architecture Micro Frontends pour Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+J'ai assisté au "Angular Global Summit' 2023" qui s'est déroulé les 14 et 15 février 2023.
 
-## Development server
+Lors de cet événement en ligne, j'ai suivi avec intérêt la présentation de [Manfred Stayer](https://at.linkedin.com/in/manfred-steyer-84645821) sur les Micro Frontends.
+La solution qu'il propose utilise le paquet [module-federation-plugin](https://github.com/angular-architects/module-federation-plugin) et exploite le "Module Federation" introduit dans [Webpack 5](https://webpack.js.org/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La promesse des Micro Frontends est de permettre à plusieurs équipes de travailler en parallèle sur des applications distinctes.
+Chacune de ces applications peut ainsi avoir son propre cycle de développement et de déploiement, rendant chaque équipe totalement autonome.
 
-## Code scaffolding
+Dans cet article, je vais vous montrer comment configurer un workspace Angular contenant :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- une application principale appelée "shell"
+- un application Micro Frontend "remote1"
+- une librairie utilisée par le shell et le remote1 appelée "shared"
 
-## Build
+On peut donc imaginer qu'aujourd'hui 2 équipes distinctes travaillent respectivement sur le shell et le remote1.
+Et rien ne vous empêche demain d'ajouter d'autres équipes pour travailler de nouveaux remoteN...
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+N'hésitez-pas à jeter un coup d'oeil au [code source de l'application](https://github.com/avine/geekle-angular-global-summit-2023) sur le repo GitHub.
 
-## Running unit tests
+## Références
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-module-federation-in-webpack-5/
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+https://github.com/angular-architects/module-federation-plugin
