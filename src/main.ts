@@ -1,8 +1,6 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { AppComponent } from './app/app.component';
-import APP_ROUTES from './app/app.routes';
+import { initFederation } from '@angular-architects/module-federation';
 
-bootstrapApplication(AppComponent, {
-  providers: [provideRouter(APP_ROUTES)],
-}).catch((err) => console.error(err));
+initFederation('/assets/mf.manifest.json')
+  .catch((err) => console.error(err))
+  .then(() => import('./bootstrap'))
+  .catch((err) => console.error(err));

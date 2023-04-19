@@ -6,7 +6,11 @@ import { SharedService } from '@demo/shared';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: '<router-outlet />',
+  template: `
+    <h2>Micro Frontend Architecture</h2>
+
+    <router-outlet />
+  `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
