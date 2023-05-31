@@ -151,11 +151,11 @@ Plusieurs choses sont à noter dans le `package.json` que la schematic a modifi�
 
 La commande `npm run run:all` a été ajoutée.
 Elle permet de lancer en parallèle toutes les applications du workspace.
-C'est l'équivalent de la commande `ng serve shell --port 4200 & ng serve remote1 --port 4201` que nous avons utilisé plus haut...
+C'est l'équivalent de la commande `ng serve shell --port 4200 & ng serve remote1 --port 4201` que nous avons utilisée plus haut...
 
 Le paquet [ngx-build-plus](https://www.npmjs.com/package/ngx-build-plus) a été installé.
 Celui-ci permet de surcharger la configuration Webpack de n'importe quel projet du workspace.
-C'est très utile, car dans Angular ces fichiers de configuration ne sont pas accessible car masqués par la CLI d'Angular.
+C'est très utile, car dans Angular ces fichiers de configuration ne sont pas accessibles car masqués par la CLI d'Angular.
 
 ## La surchage des configurations Webpack
 
@@ -217,7 +217,7 @@ Notez que l'application "remote1" pouvant être compilée de manière autonome, 
 ## Le manifest
 
 La schematic a également créé un manifest accessible à l'exécution (at runtime): `src/assets/mf.manifest.json`.
-Celui-ci inique sans ambiguïté où aller récupérer le `remoteEntry.js` du "remote1" :
+Celui-ci indique sans ambiguïté où aller récupérer le `remoteEntry.js` du "remote1" :
 
 ```json
 {
@@ -239,7 +239,7 @@ bootstrapApplication(AppComponent, {
 }).catch((err) => console.error(err));
 ```
 
-Et désormais, l'application est chargée dynamiquement après que le manifest et ses différents `remoteEntry.js` ont bien été téléchargées :
+Et désormais, l'application est chargée dynamiquement après que le manifest et ses différents `remoteEntry.js` ont bien été téléchargés :
 
 ```ts
 // src/main.ts
